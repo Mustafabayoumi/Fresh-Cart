@@ -4,29 +4,32 @@
 import React, { useContext, useEffect, useState } from 'react'
 import style from './Cart.module.css';
 import { CartContext } from './../../Context/CartContext';
+import { Link } from 'react-router-dom';
 
 
 export default function Cart() {
-    let { getLoggedUserCart, UpdatCartItemCount, deleteProductItem } = useContext(CartContext);
+    let { getCartItems, UpdatCartItemCount, deleteProductItem , setCart } = useContext(CartContext);
     const [CartDetails, setCartDetails] = useState();
 
-    async function getCartItems() {
-        let response = await getLoggedUserCart();
-        // console.log(response.data.data);
+    async function getCartItemsData() {
+        let response = await getCartItems();
         //re-render
         setCartDetails(response.data.data)
+            // console.log(response.data.data);
+
     }
     useEffect(() => {
         // Component didmount
-        getCartItems();
+        getCartItemsData();
     }, []);
 
 
     async function deleteItem(productId) {
         let response = await deleteProductItem(productId);
-        console.log(response.data.data);
         //re-render
         setCartDetails(response.data.data)
+        // console.log(response.data.data);
+        setCart(response.data)
     }
 
     async function UpdatCartCount(productId, count) {
@@ -41,7 +44,7 @@ return (
 <>
     <div className="relative overflow-x-auto sm:rounded-lg">
         <h2 className='text-3xl text-green-600 py-5 text-center'>Shopping Cart</h2>
-        <h3 className='text-center text-slate-600'>Total Cart Price :{CartDetails?.totalCartPrice} EGP</h3>
+        <h3 className='text-center text-slate-600 '><span className='font-semibold'>Total Cart Price</span> :{CartDetails?.totalCartPrice} EGP</h3>
         <table className="w-3/4 mx-auto my-6 text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
@@ -100,6 +103,11 @@ return (
                 )}
             </tbody>
         </table>
+        <Link to={'/checkout'} >
+        <div className='row--'>
+        <button  className=' btn--'>CheckOut Now</button>
+        </div>
+        </Link>
     </div>
 </>
 )

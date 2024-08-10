@@ -4,6 +4,7 @@ import Layout from './components/Layout/Layout';
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import Categories from './components/Categories/Categories';
+import CategoryDetails from './components/CategoryDetails/CategoryDetails';
 import Brands from './components/Brands/Brands';
 import Cart from './components/Cart/Cart';
 import Products from './components/Products/Products';
@@ -19,7 +20,8 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import CartContextProvider from './Context/CartContext';
 import BrandDetails from './components/BrandDetails/BrandDetails';
 import { Toaster } from 'react-hot-toast';
-import CategoryDetails from './components/CategoryDetails/CategoryDetails';
+import CheckOut from './components/CheckOut/CheckOut';
+import Orders from './components/Orders/Orders';
 
 
 let query = new QueryClient();
@@ -36,6 +38,8 @@ let router = createBrowserRouter([
       { path: "Cart", element: <ProtectedRoute><Cart /></ProtectedRoute> },
       { path: "Products", element: <ProtectedRoute><Products /></ProtectedRoute> },
       { path: "ProdutDetails/:id/:category", element: <ProtectedRoute><ProdutDetails /></ProtectedRoute> },
+      { path: "Checkout", element: <ProtectedRoute><CheckOut /></ProtectedRoute> },
+      { path: "AllOrders", element: <ProtectedRoute><Orders /></ProtectedRoute> },
       { path: "Login", element: <Login /> },
       { path: "Register", element: <Register /> },
       { path: "*", element: <Notfound /> },

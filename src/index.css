@@ -4,11 +4,22 @@
 
 .row
 {
-    @apply flex flex-wrap px-4 py-8 items-center;
+    @apply flex flex-wrap px-4 py-8 items-center ;
 }
-.btn{
-    @apply px-4 py-2 w-full rounded-lg text-white bg-green-600
+.btn
+{
+    @apply px-4 py-2 w-full rounded-lg text-white bg-green-600;
 }
+
+.btn--
+{
+    @apply px-4 py-2 w-3/4  rounded-lg text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-500;
+}
+.row--
+{
+    @apply flex flex-wrap px-4 py-8 items-center justify-center ;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap');
 :root
 {

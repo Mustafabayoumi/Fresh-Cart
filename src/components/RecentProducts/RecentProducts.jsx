@@ -10,12 +10,11 @@ import { CartContext } from '../../Context/CartContext';
 import toast from 'react-hot-toast';
 
 export default function RecentProducts() {
-
     function getRecent() {
         return axios.get(`https://ecommerce.routemisr.com/api/v1/products`)
     }
 
-    let { addCart } = useContext(CartContext);
+    let { addCart , setCart } = useContext(CartContext);
 const [Loading, setLoading] = useState(false)
 const [CurrentProductId, setCurrentProductId] = useState(0)
 
@@ -30,7 +29,10 @@ const [CurrentProductId, setCurrentProductId] = useState(0)
                 loading: 'Adding product to your cart...',
                 success: (response) => {
                     if (response?.data?.status === "success") {
-                        setLoading(false)
+                        setLoading(false);
+                        console.log(response.data);
+                        setCart(response.data);
+                        
                         return 'Product added successfully to your cart.';
                     } else {
                         setLoading(false)
