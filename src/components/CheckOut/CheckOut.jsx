@@ -29,7 +29,7 @@ export default function Checkout() {
         {
             window.location.href = data.session.url;
         }
-        // console.log(data.session.url);
+//        // console.log(data.session.url);
 }    
 
 return (

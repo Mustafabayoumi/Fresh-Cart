@@ -37,8 +37,8 @@ const [isloding, setIsloding] = useState(false)
 
 
     .catch((error) =>{
-        // setIsloding(false)
-        // setApiError(apiResponse?.response?.data?.message);
+        setIsloding(false)
+        setApiError(apiResponse?.response?.data?.message);
         // console.log(apiResponse?.response?.data?.message);
         console.log(error);
     })

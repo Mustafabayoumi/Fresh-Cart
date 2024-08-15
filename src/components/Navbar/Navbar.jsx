@@ -13,7 +13,7 @@ export default function Navbar() {
     let navigate = useNavigate();
     let { userLogin, setUserLogin } = useContext(UserContext);
     let { Cart } = useContext(CartContext);
-    console.log(Cart);
+    // console.log(Cart);
 
     function LogOut() {
         localStorage.removeItem('userToken');

@@ -22,7 +22,7 @@ const [CurrentProductId, setCurrentProductId] = useState(0)
         setCurrentProductId(productId)
         setLoading(true);
     localStorage.getItem('userToken')
-        console.log(productId);
+//        console.log(productId);
         toast.promise(
             addCart(productId),
             {
@@ -30,7 +30,7 @@ const [CurrentProductId, setCurrentProductId] = useState(0)
                 success: (response) => {
                     if (response?.data?.status === "success") {
                         setLoading(false);
-                        console.log(response.data);
+//                        console.log(response.data);
                         setCart(response.data);
                         
                         return 'Product added successfully to your cart.';

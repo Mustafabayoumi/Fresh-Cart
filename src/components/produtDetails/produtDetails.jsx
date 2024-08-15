@@ -35,7 +35,7 @@ export default function ProductDetails() {
         setCurrentProductId(productId);
         setLoading(true);
         localStorage.getItem('userToken');
-        console.log(productId);
+//        console.log(productId);
         toast.promise(
             addCart(productId),
             {
@@ -74,7 +74,7 @@ export default function ProductDetails() {
                 let allProducts = data.data;
                 let related = allProducts.filter((product) => product.category.name === category);
                 setRelatedProducts(related);
-                console.log(related);
+//                console.log(related);
             })
             .catch((error) => {
                 console.error("Error fetching related products", error);

@@ -30,18 +30,18 @@ const [isloding, setIsloding] = useState(false)
                 navigate('/')
             }
         // setIsloding(false)
-        console.log(response.data.message);
+//        console.log(response.data.message);
     })
     .catch((error) =>{
-        console.log(error);
+//        console.log(error);
         setIsloding(false)
         setApiError(apiResponse?.response?.data?.message);
-        // console.log(apiResponse?.response?.data?.message);
+//        // console.log(apiResponse?.response?.data?.message);
     
     })
 
-    console.log(formValues);
-    console.log('Register');
+//    console.log(formValues);
+//    console.log('Register');
 }
 
 

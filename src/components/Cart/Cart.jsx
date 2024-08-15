@@ -15,7 +15,7 @@ export default function Cart() {
         let response = await getCartItems();
         //re-render
         setCartDetails(response.data.data)
-            // console.log(response.data.data);
+////            // console.log(response.data.data);
 
     }
     useEffect(() => {
@@ -28,13 +28,13 @@ export default function Cart() {
         let response = await deleteProductItem(productId);
         //re-render
         setCartDetails(response.data.data)
-        // console.log(response.data.data);
+////        // console.log(response.data.data);
         setCart(response.data)
     }
 
     async function UpdatCartCount(productId, count) {
         let response = await UpdatCartItemCount(productId, count);
-        console.log(response.data.data);
+////        console.log(response.data.data);
         //re-render
         setCartDetails(response.data.data)
     }

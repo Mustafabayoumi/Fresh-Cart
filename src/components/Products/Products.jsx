@@ -32,7 +32,7 @@ export default function Products() {
         setCurrentProductId(productId);
         setLoading(true);
         localStorage.getItem('userToken');
-        console.log(productId);
+//        console.log(productId);
         toast.promise(
             addCart(productId),
             {

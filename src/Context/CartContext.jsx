@@ -11,8 +11,8 @@ export default function CartContextProvider(props){
         let headers ={
             token: localStorage.getItem('userToken')
         }
-    // console.log(localStorage.getItem('userToken'))
-    // console.log('user token: ' , headers.token);
+////    // console.log(localStorage.getItem('userToken'))
+////    // console.log('user token: ' , headers.token);
 
     const [Cart, setCart] = useState(null)
 function getCartItems(){
@@ -40,11 +40,11 @@ function getCartItems(){
         if (!token) {
             return Promise.reject(new Error("You are not logged in. Please login to get access"));
         }
-        // console.log(productId);  
+////        // console.log(productId);  
         try {
             const response = await axios.post(`https://ecommerce.routemisr.com/api/v1/cart`,
                 { productId }, { headers: { token } });
-            console.log(productId);
+////            console.log(productId);
             return response;
         } catch (error) {
             console.error("Error adding to cart:", error?.message);

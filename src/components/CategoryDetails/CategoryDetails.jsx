@@ -37,7 +37,7 @@ const CategoryDetails = () => {
         setCurrentProductId(productId)
         setLoading(true);
     localStorage.getItem('userToken')
-        console.log(productId);
+//        console.log(productId);
         toast.promise(
             addCart(productId),
             {
