@@ -29,7 +29,7 @@ let router = createBrowserRouter([
   {
     path: "",element: <Layout />,
     children: [
-      { index: true, element: <ProtectedRoute><Login /></ProtectedRoute> },
+      { index: true, element: <ProtectedRoute><Home /></ProtectedRoute> },
       { path: "About", element: <ProtectedRoute><About /></ProtectedRoute> },
       { path: "Categories", element: <ProtectedRoute><Categories /></ProtectedRoute> },
       { path: "CategoryDetails/:id", element: <ProtectedRoute><CategoryDetails /></ProtectedRoute> },
@@ -40,7 +40,7 @@ let router = createBrowserRouter([
       { path: "ProdutDetails/:id/:category", element: <ProtectedRoute><ProdutDetails /></ProtectedRoute> },
       { path: "Checkout", element: <ProtectedRoute><CheckOut /></ProtectedRoute> },
       { path: "AllOrders", element: <ProtectedRoute><Orders /></ProtectedRoute> },
-      { path: "Home", element: <Home /> },
+      { path: "Login", element: <Login /> },
       { path: "Register", element: <Register /> },
       { path: "*", element: <Notfound /> },
     ]
