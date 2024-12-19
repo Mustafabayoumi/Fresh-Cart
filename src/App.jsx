@@ -27,9 +27,10 @@ import Orders from './components/Orders/Orders';
 let query = new QueryClient();
 let router = createBrowserRouter([
   {
-    path: "",element: <Layout />,
+    path: "", element: <Layout />,
     children: [
-      { index: true, element: <ProtectedRoute><Home /></ProtectedRoute> },
+      { index: true, element: <Login /> }, 
+      { path: "Home", element: <ProtectedRoute><Home /></ProtectedRoute> }, 
       { path: "About", element: <ProtectedRoute><About /></ProtectedRoute> },
       { path: "Categories", element: <ProtectedRoute><Categories /></ProtectedRoute> },
       { path: "CategoryDetails/:id", element: <ProtectedRoute><CategoryDetails /></ProtectedRoute> },
@@ -42,7 +43,7 @@ let router = createBrowserRouter([
       { path: "AllOrders", element: <ProtectedRoute><Orders /></ProtectedRoute> },
       { path: "Login", element: <Login /> },
       { path: "Register", element: <Register /> },
-      { path: "*", element: <Notfound /> },
+      { path: "*", element: <Notfound /> }, 
     ]
   }
 ]);
