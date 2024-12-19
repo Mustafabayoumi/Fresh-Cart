@@ -27,10 +27,9 @@ import Orders from './components/Orders/Orders';
 let query = new QueryClient();
 let router = createBrowserRouter([
   {
-    path: "", element: <Layout />,
+    path: "",element: <Layout />,
     children: [
-      { index: true, element: <Login /> }, 
-      { path: "Home", element: <ProtectedRoute><Home /></ProtectedRoute> },
+      { index: true, element: <ProtectedRoute><Login /></ProtectedRoute> },
       { path: "About", element: <ProtectedRoute><About /></ProtectedRoute> },
       { path: "Categories", element: <ProtectedRoute><Categories /></ProtectedRoute> },
       { path: "CategoryDetails/:id", element: <ProtectedRoute><CategoryDetails /></ProtectedRoute> },
@@ -41,7 +40,7 @@ let router = createBrowserRouter([
       { path: "ProdutDetails/:id/:category", element: <ProtectedRoute><ProdutDetails /></ProtectedRoute> },
       { path: "Checkout", element: <ProtectedRoute><CheckOut /></ProtectedRoute> },
       { path: "AllOrders", element: <ProtectedRoute><Orders /></ProtectedRoute> },
-      { path: "Login", element: <Login /> },
+      { path: "Home", element: <Home /> },
       { path: "Register", element: <Register /> },
       { path: "*", element: <Notfound /> },
     ]
@@ -57,7 +56,7 @@ function App() {
             <CartContextProvider>
               <RouterProvider router={router}></RouterProvider>
               <ReactQueryDevtools initialIsOpen={false} />
-              <Toaster />
+              <Toaster/>
             </CartContextProvider>
           </CounterContextProvider>
         </UserContextProvider>
